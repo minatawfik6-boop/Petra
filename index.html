@@ -251,7 +251,7 @@
     while (true) { let n = new Date(tmp); n.setFullYear(n.getFullYear()+1); if (n <= now) { years++; tmp = n; } else break; }
     while (true) { let n = new Date(tmp); n.setMonth(n.getMonth()+1); if (n <= now) { months++; tmp = n; } else break; }
     while (true) { let n = new Date(tmp); n.setDate(n.getDate()+7); if (n <= now) { weeks++; tmp = n; } else break; }
-    days = Math.floor((now - tmp) / 864e5) + 1;
+    days = Math.floor((now - tmp) / 864e5) + 1; if (days >= 7) { weeks += Math.floor(days / 7); days = days % 7; }
     let parts = [];
     if (years)  parts.push(years  + ' سنة');
     if (months) parts.push(months + ' شهر');
