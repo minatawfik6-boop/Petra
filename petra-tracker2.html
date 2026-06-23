@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petra</title>
+<link rel="apple-touch-icon" href="data:image/jpeg;base64,/9j/4QtkRXhpZgAATU0AKgAAAAgABgESAAMAAAABAAEAAAEaAAUAAAABAAAAVgEbAAUAAAABAAAAXgEoAAMAAAABAAIAAAITAAMAAAABAAEAAIdpAAQAAAABAAAAZgAAAMAAAABIAAAAAQAAAEgAAAABAAeQAAAHAAAABDAyMjGRAQAHAAAABAECAwCgAAAHAAAABDAxMDCgAQADAAAAAQABAACgAgAEAAAAAQAAAgCgAwAEAAAAAQAAAbikBgADAAAAAQAAAAAAAAAAAAYBAwADAAAAAQAGAAABGgAFAAAAAQAAAQ4BGwAFAAAAAQAAARYBKAADAAAAAQACAAACAQAEAAAAAQAAAR4CAgAEAAAAAQAACjwAAAAAAAAASAAAAAEAAABIAAAAAf/Y/8AAEQgAigCgAwEiAAIRAQMRAv/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/bAEMAAgICAgICAwICAwUDAwMFBgUFBQUGCAYGBgYGCAoICAgICAgKCgoKCgoKCgwMDAwMDA4ODg4ODw8PDw8PDw8PD//bAEMBAgICBAQEBwQEBxALCQsQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEP/bAEMCAgICBAQEBwQEBxALCQsQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEP/dAAQACv/aAAwDAQACEQMRAD8A/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9D9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/0f38ooooAKKKKACiiigAooooAKKKKACiikzQAtFIDmloAKKKKACiiigAooooA//S/fyiiigAooooAKQkDrQTivFPHvjjU4b9fCnhYFr+YhXkHLIT0VffHJPYU0rnThMJOvUVOH/AS7s9P1bxLomhpv1W8jt/RWOWP0Uc1zT/ABI0INF5MN3MLhtkRWBhvY9l3YzWT4f8C6R4dgbXPEbrfX6KZJbiY7ljwMnbn09e9YXgy8k8aeNrvxLKCLLTUMVqh6Lv4Bx6kAk/WqSR6VPB0GpyTclFavZX6JLXd9b/ACPSNL8ZaNqV82l+Y9terz5E6GN8deM9fwrrAQwyK+cvjDKlt4g0eezbZeRIWLD7ww42frnFfQ8MhMEbvyzKCfqRSlHscuMwcYUqdaO0r6Ppb9Ctqs1zbadcz2cfmzxxuyJ/eYDIFfLU3xS8cThbaOZI5g/8MXzEk4CYPvXtviX4k6BoSBYZRfXBfyzFGwypHUsegxWPqc/gGCVPHrMkstsdmISGDzMPlGOhZfX8acEehlVqK5q9DmUttOvb5lrxN8RJvCdjp8d1afaNRuolkkTdtVOAG5+vQVc0j4peF7+xjur25FjMx2tFJyQfXI7e9eefEeCPxP4b07xpYRuiINsit1Ebngn6MOvvXjVhpmo6vcC10y3e5mOBhFzj6noPxq1BNHr5fkWFr4ZzqPlkm767eWuh92QTx3EazQuHRxlWU5BB7g1NXKeDNIutB8O2el3r75oV+Y9gWJOB7DOK6usT4utCMZyjF3Se4UUUUGYUUUUAf//T/fyiiigAooooAQjIr57sdK13wx47v9YudIn1OKcyGJ4cHHmHIPPTjg175d3MNnbyXVw4jiiUszHoFHU1znh3xdonir7QdIlZ/sxAcMu3r0I9jVRdj0MFiKlKNSUY3i1Z79fNbHlvxFv9Vl8PG51pPsMczCO3s1bczN1MkrDg7R0Ud+tbvgdtM8HeB49Q1WZIPtGbh/mG47vuqB1JwBxXL+Mkfxl4/svDdsS9rYf68jouTmTJ+mFr1U+B/CEJF2dKiZowWG7LAY9FJIqnseriKtOnhKdGppze80u3Ravrv1Pny2OrfEXxx9sgUQgMJAzjcIYY/u8dyTz7k16LpF34nsPiM3h6TU5NTsxH5kvmAfIGXI6dDuwBXO+BNbv5tS1yfS7X7RqV86+UCAsUUYJG5z2UccDrXqFtZWPgnRr3WtQn829lDSTzufmkkI4Ue2egqm+h15riOWXsXFW5VGMdG7u2vy/Fnnws7TxL8VjAkKfZNJUlwqgKzJ1JA65duc+lanxOsbC7to9Os/LtFsEe8lYKAgB+RFIH8UjcD6VF8LY0stG1TxZqZ2G5kZmkb+4nLf8AjxP41yfjme7uLaztZg0d7rsxupUPBWIHZbxn0wOcetCWooQk8ZClGWlNJfO13+p6R4Mub7xj4Vnt9as47exlTyI/JyNyKMEhT0APSobFmvLmXwz4GCabp1gQl1eIoZmc/wAEZ7t6sa0fF+pW/g3wUbWxYQSmNbeBR13EYYj6DJJq34JtLTw/4ItZpsR4gNzM3qWG4k/hgVL6s8ypL3J14x92UrRXS/fz0/FnEpfeIx49tvCljq01xZ2rCSZnALYxuZWYdR0A+te8jpXhHwtC3MmueMtQYL58jDexwFUZd/wHA/CvZNH1IatYRagiNGkw3KGGDtzwce45qZ7mecR5Zqml8KSbta7erNSiiipPHCiiigD/1P38ooooAKKKKAMjXdLXWdJutMdiguY2TcO2Rwa8w8O6N4n8L6PJpOnaRCb6QsDeeaPLfn5WYfe4B6V7NTdopqVjqpYuUIOna6bT+44nwb4OtvDFvLJJJ9qv7s7p5z1Y5zgegzXauu5Svrx+FPopNmNatKpJzm7tnzpP8OPGOha5LqHhG4RY3LFCX2sFY52spBBFa2ueA/F+t6K82r6iL/UkKmGBf3cCAH5j05Yjua90wM5pav2jPTlnuIbi9Lx62108zyDwl4L1yKwtrLxRcK1naNuitIvukg7gZW/iweg6Vl+PPBXibVvE9rrWh7GESRgb2A8t42yDg9R3r3MDFIRk5pc7M45vWVb26tfXpprueIeKPh9rut6Obm8uxfayGUj+CJU/ijQds9cnqapr4N8f6h4Vk0vU75UEEYSC2Qgb9pGBI47Y6CvfKQDFHOyoZzWUFCysndabenY8W8IeBfEEOnppniK4RdNicyC1j5MjE5/ev3XPavZ0RY1CrwBxx0pwAHSlpN3OTF4ydebnPfyCiiikcoUUUUAf/9X9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/1v38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//X/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9kAAP/iAihJQ0NfUFJPRklMRQABAQAAAhhhcHBsBAAAAG1udHJSR0IgWFlaIAfmAAEAAQAAAAAAAGFjc3BBUFBMAAAAAEFQUEwAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAAANMtYXBwbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmRlc2MAAAD8AAAAMGNwcnQAAAEsAAAAUHd0cHQAAAF8AAAAFHJYWVoAAAGQAAAAFGdYWVoAAAGkAAAAFGJYWVoAAAG4AAAAFHJUUkMAAAHMAAAAIGNoYWQAAAHsAAAALGJUUkMAAAHMAAAAIGdUUkMAAAHMAAAAIG1sdWMAAAAAAAAAAQAAAAxlblVTAAAAFAAAABwARABpAHMAcABsAGEAeQAgAFAAM21sdWMAAAAAAAAAAQAAAAxlblVTAAAANAAAABwAQwBvAHAAeQByAGkAZwBoAHQAIABBAHAAcABsAGUAIABJAG4AYwAuACwAIAAyADAAMgAyWFlaIAAAAAAAAPbVAAEAAAAA0yxYWVogAAAAAAAAg98AAD2/////u1hZWiAAAAAAAABKvwAAsTcAAAq5WFlaIAAAAAAAACg4AAARCwAAyLlwYXJhAAAAAAADAAAAAmZmAADypwAADVkAABPQAAAKW3NmMzIAAAAAAAEMQgAABd7///MmAAAHkwAA/ZD///ui///9owAAA9wAAMBu/9sAhAABAQEBAQECAQECAwICAgMEAwMDAwQFBAQEBAQFBgUFBQUFBQYGBgYGBgYGBwcHBwcHCAgICAgJCQkJCQkJCQkJAQEBAQICAgQCAgQJBgUGCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQn/3QAEACD/wAARCAG4AgADASIAAhEBAxEB/8QBogAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoLEAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+foBAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKCxEAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9D+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9H+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9L+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9P+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9T+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9X+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9b+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9f+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9D+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKThRTTIooHYfRUfmJR5iUCJKKj8xKPMSgCSiiigAooooAKKKKACo/LqtPPjCqKybnV7W0cRzSIpP+0KCoxvpE6Oo/M9qyEvoWj8zeuPUHj86429+J3gvT7v7DdX8ayZxtyP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YsIDdB+VO46VapD4G16HKWvg7QLOTzba0jU/SuiW3k+VcYC9K0dp9afVRm0KpefxtszgrqSHGQe1cVqvgDwlq8/n39jG59SOa9GqExA9aIzaCjVq0mpUZW9DidL8JeHtFkC6XapHjoQBXUPGzsFC4PrV1IYxyKmx+VNpjrYmpVd6jKscW0Y/ipuzA4q7RWYjjtX0PSdZQw6tbJOOg3DpXMRfC34exMJv7LgZ/pXqbwo/UVELSJTkVoqjRrTxNaEeSE2l2Rk2mnx2IEVrEqQgYCqMCtB4CYtuOPSr4x0FIy5qOZmbf825zWoaZbaiiwXcYdMHOa85b4ReA3u2vb2yjcn+EjivaPLyMUw26HsKLlYXFVqd1Tm0jkNF8P6LoqeVo1qluPZRXRi22JuI3Vb+zxg7hwBU+OQMcUXFOcpO83c811j4feEtUk+26hp6Su3H3eau6X4T0jQ3xpVtEif7K4Nd1KMgCofKNFxzr1WuXm0Io4sYfvVnywvzd6kRQoxT6RlGNgooooKCiiigAooooAKKKKACiiigAooooAKKKKACiiigD//R/v4ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigCPy6cFA6U6igAooooAKKKKACiiigAooooFYKKKKBhTGXPSn0UARBD3qWiigAooooAYUz3pNlSUUAFFFFABUZT0qSigCMJ61JRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf/9L+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9P+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9T+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9X+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9b+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9f+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9D+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9H+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9L+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9k=">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --blush: #F2C4CE; --cream: #FDF6F0; --warm: #F7EBE1;
+    --text: #3D2B2B; --muted: #9B7B7B; --card: #FFFAF8; --accent: #C9748A;
+  }
+  body { font-family: 'Tajawal', sans-serif; background: var(--cream); color: var(--text); min-height: 100vh; padding: 0 0 80px; }
+  header { background: linear-gradient(135deg, var(--blush), #F8D7E3); padding: 32px 20px 24px; text-align: center; border-bottom-left-radius: 32px; border-bottom-right-radius: 32px; box-shadow: 0 4px 20px rgba(217,142,160,0.2); }
+  header h1 { font-size: 2rem; font-weight: 700; color: var(--text); }
+  header h1 span { color: var(--accent); }
+  .age-badge { display: inline-block; margin-top: 10px; background: white; border-radius: 50px; padding: 6px 18px; font-size: 0.85rem; color: var(--accent); font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .tabs { display: flex; gap: 8px; padding: 20px 16px 0; justify-content: center; }
+  .tab { flex: 1; max-width: 160px; padding: 10px 8px; border: none; border-radius: 14px; font-family: 'Tajawal', sans-serif; font-size: 0.95rem; font-weight: 500; cursor: pointer; background: white; color: var(--muted); box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.2s; }
+  .tab.active { background: var(--accent); color: white; box-shadow: 0 4px 12px rgba(201,116,138,0.35); }
+  .section { display: none; padding: 16px; }
+  .section.active { display: block; }
+  .card { background: var(--card); border-radius: 20px; padding: 20px; margin-bottom: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .card h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .input-row { display: flex; gap: 10px; align-items: center; margin-bottom: 12px; }
+  input[type="number"], input[type="datetime-local"], input[type="date"] { flex: 1; padding: 12px 14px; border: 1.5px solid var(--blush); border-radius: 12px; font-family: 'Tajawal', sans-serif; font-size: 0.85rem; background: var(--warm); color: var(--text); outline: none; transition: border-color 0.2s; width: 100%; max-width: 100%; box-sizing: border-box; }
+  input:focus { border-color: var(--accent); }
+  .unit-label { font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
+  .btn { width: 100%; padding: 13px; border: none; border-radius: 14px; background: var(--accent); color: white; font-family: 'Tajawal', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 12px rgba(201,116,138,0.3); margin-top: 4px; }
+  .btn:active { transform: scale(0.98); }
+  .log-list { margin-top: 8px; }
+  .log-item { display: flex; justify-content: space-between; align-items: center; padding: 11px 14px; background: var(--warm); border-radius: 12px; margin-bottom: 8px; font-size: 0.9rem; }
+  .log-date { color: var(--muted); font-size: 0.8rem; margin-top: 2px; }
+  .log-value { font-weight: 600; color: var(--accent); }
+  .log-badge { display: inline-block; font-size: 0.72rem; padding: 2px 8px; border-radius: 20px; margin-left: 6px; font-weight: 600; }
+  .badge-natural { background: #FFE4EC; color: #C9748A; }
+  .badge-formula { background: #E4F0FF; color: #5B8ED6; }
+  .delete-btn { background: none; border: none; color: #ccc; cursor: pointer; font-size: 1rem; padding: 2px 6px; border-radius: 6px; flex-shrink: 0; }
+  .delete-btn:active { color: #e88; }
+  .empty-state { text-align: center; color: var(--muted); font-size: 0.9rem; padding: 20px; }
+  .toggle-group { display: flex; gap: 8px; margin-bottom: 14px; }
+  .toggle-btn { flex: 1; padding: 10px 8px; border: 2px solid var(--blush); border-radius: 12px; background: white; font-family: 'Tajawal', sans-serif; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; color: var(--muted); }
+  .toggle-btn.selected { border-color: var(--accent); background: var(--blush); color: var(--text); font-weight: 600; }
+  .section-label { font-size: 0.8rem; color: var(--muted); margin-bottom: 6px; font-weight: 500; }
+  .field-block { margin-bottom: 12px; }
+  .sync-indicator { text-align: center; font-size: 0.8rem; color: var(--muted); padding: 6px; }
+  .sync-indicator.syncing { color: #f0a500; }
+  .sync-indicator.synced { color: #5cb85c; }
+  .sync-indicator.error { color: #e55; }
+  .log-note { font-size: 0.78rem; color: var(--muted); margin-top: 3px; font-style: italic; }
+  textarea { width: 100%; padding: 12px 14px; border: 1.5px solid var(--blush); border-radius: 12px; font-family: 'Tajawal', sans-serif; font-size: 0.95rem; background: var(--warm); color: var(--text); outline: none; resize: none; transition: border-color 0.2s; }
+  textarea:focus { border-color: var(--accent); }
+  .chart-wrap svg { width: 100%; display: block; }
+  .chart-empty { text-align: center; color: var(--muted); font-size: 0.9rem; padding: 20px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🌸 <span>Petra</span></h1>
+  <div class="age-badge" id="ageBadge">جاري الحساب...</div>
+</header>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('nursing', this)">🤱 رضاعة</button>
+  <button class="tab" onclick="switchTab('diaper', this)">🚼 حمام</button>
+  <button class="tab" onclick="switchTab('weight', this)">⚖️ وزن</button>
+</div>
+
+<!-- NURSING TAB -->
+<div id="nursing" class="section active">
+  <div class="card">
+    <h3>🍼 تسجيل رضاعة</h3>
+    <div class="section-label">نوع الرضاعة</div>
+    <div class="toggle-group">
+      <button class="toggle-btn selected" id="typeNatural" onclick="selectType('natural')">🤱 طبيعي</button>
+      <button class="toggle-btn" id="typeFormula" onclick="selectType('formula')">🍼 صناعي</button>
+    </div>
+    <div id="naturalControls">
+      <div class="section-label">الجهة</div>
+      <div class="toggle-group">
+        <button class="toggle-btn selected" id="sideR" onclick="selectSide('right')">يمين</button>
+        <button class="toggle-btn" id="sideL" onclick="selectSide('left')">شمال</button>
+      </div>
+      <div class="field-block">
+        <div class="section-label">المدة (بالدقيقة)</div>
+        <div class="input-row">
+          <input type="number" id="durationInput" placeholder="مثال: 15" min="1" max="120">
+          <span class="unit-label">دقيقة</span>
+        </div>
+      </div>
+    </div>
+    <div id="formulaControls" style="display:none">
+      <div class="field-block">
+        <div class="section-label">الكمية</div>
+        <div class="input-row">
+          <input type="number" id="mlInput" placeholder="مثال: 60" min="0" max="500" step="5">
+          <span class="unit-label">ml</span>
+        </div>
+      </div>
+    </div>
+    <div class="field-block">
+      <div class="section-label">التاريخ والوقت (اتركيه لو دلوقتي)</div>
+      <input type="datetime-local" id="nursingDateInput" style="width:100%;box-sizing:border-box;font-size:0.8rem;padding:24px 14px;-webkit-appearance:none;appearance:none;border:1.5px solid var(--blush);border-radius:12px;background:var(--warm);color:var(--text);outline:none;">
+    </div>
+    <div class="field-block">
+      <div class="section-label">ملاحظات (اختياري)</div>
+      <textarea id="nursingNote" rows="2" placeholder="أي ملاحظة..."></textarea>
+    </div>
+    <button class="btn" onclick="saveNursing()">💾 سجّل</button>
+    <div class="sync-indicator" id="nursingSyncStatus"></div>
+  </div>
+  <div class="card">
+    <h3 style="justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <span>📊 ملخص اليوم</span>
+      <input type="date" id="nursingSummaryDate" onchange="updateNursingSummary()" style="font-size:0.7rem;padding:3px 6px;border:1.5px solid var(--blush);border-radius:8px;background:var(--warm);color:var(--text);outline:none;width:120px;box-sizing:border-box">
+    </h3>
+    <div style="display:flex;gap:12px;justify-content:center;padding:8px 0;">
+      <div style="text-align:center;background:var(--warm);border-radius:14px;padding:12px 16px;flex:1">
+        <div style="font-size:1.4rem">🤱</div>
+        <div style="font-size:1.5rem;font-weight:700;color:var(--accent)" id="sumNatural">-</div>
+        <div style="font-size:0.75rem;color:var(--muted)">طبيعي</div>
+      </div>
+      <div style="text-align:center;background:var(--warm);border-radius:14px;padding:12px 16px;flex:1">
+        <div style="font-size:1.4rem">🍼</div>
+        <div style="font-size:1.5rem;font-weight:700;color:var(--accent)" id="sumFormula">-</div>
+        <div style="font-size:0.75rem;color:var(--muted)">ml صناعي</div>
+      </div>
+    </div>
+    <div style="text-align:center;font-size:0.75rem;color:var(--muted)" id="nursingSummaryLabel">من ٦ص النهارده لـ ٦ص بكره</div>
+  </div>
+  <div class="card">
+    <h3>📋 سجل الرضاعة</h3>
+    <div class="sync-indicator syncing" id="nursingLoadStatus">جاري التحميل...</div>
+    <div class="log-list" id="nursingLog"></div>
+  </div>
+</div>
+
+<!-- DIAPER TAB -->
+<div id="diaper" class="section">
+  <div class="card">
+    <h3>🚼 تسجيل حمام</h3>
+    <div class="section-label">النوع</div>
+    <div class="toggle-group">
+      <button class="toggle-btn selected" id="diaperPi" onclick="selectDiaper('pi')">💧 بي</button>
+      <button class="toggle-btn" id="diaperKi" onclick="selectDiaper('ki')">💩 كي</button>
+      <button class="toggle-btn" id="diaperBoth" onclick="selectDiaper('both')">💧💩 الاتنين</button>
+    </div>
+    <div class="field-block">
+      <div class="section-label">التاريخ والوقت (اتركيه لو دلوقتي)</div>
+      <input type="datetime-local" id="diaperDateInput" style="width:100%;box-sizing:border-box;font-size:0.8rem;padding:24px 14px;-webkit-appearance:none;appearance:none;border:1.5px solid var(--blush);border-radius:12px;background:var(--warm);color:var(--text);outline:none;">
+    </div>
+    <div class="field-block">
+      <div class="section-label">ملاحظات (اختياري)</div>
+      <textarea id="diaperNote" rows="2" placeholder="لون، قوام، أي ملاحظة..."></textarea>
+    </div>
+    <button class="btn" onclick="saveDiaper()">💾 سجّل</button>
+    <div class="sync-indicator" id="diaperSyncStatus"></div>
+  </div>
+  <div class="card">
+    <h3 style="justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <span>📊 ملخص اليوم</span>
+      <input type="date" id="diaperSummaryDate" onchange="updateDiaperSummary()" style="font-size:0.7rem;padding:3px 6px;border:1.5px solid var(--blush);border-radius:8px;background:var(--warm);color:var(--text);outline:none;width:120px;box-sizing:border-box">
+    </h3>
+    <div id="diaperSummary" style="display:flex;gap:12px;justify-content:center;padding:8px 0;">
+      <div style="text-align:center;background:var(--warm);border-radius:14px;padding:12px 20px;flex:1">
+        <div style="font-size:1.6rem">💧</div>
+        <div style="font-size:1.5rem;font-weight:700;color:var(--accent)" id="sumPi">-</div>
+        <div style="font-size:0.75rem;color:var(--muted)">بي</div>
+      </div>
+      <div style="text-align:center;background:var(--warm);border-radius:14px;padding:12px 20px;flex:1">
+        <div style="font-size:1.6rem">💩</div>
+        <div style="font-size:1.5rem;font-weight:700;color:var(--accent)" id="sumKi">-</div>
+        <div style="font-size:0.75rem;color:var(--muted)">كي</div>
+      </div>
+    </div>
+    <div style="text-align:center;font-size:0.75rem;color:var(--muted)" id="diaperSummaryLabel">من ٦ص النهارده لـ ٦ص بكره</div>
+  </div>
+  <div class="card">
+    <h3>📋 سجل الحمام</h3>
+    <div class="sync-indicator syncing" id="diaperLoadStatus">جاري التحميل...</div>
+    <div class="log-list" id="diaperLog"></div>
+  </div>
+</div>
+
+<!-- WEIGHT TAB -->
+<div id="weight" class="section">
+  <div class="card">
+    <h3>⚖️ تسجيل الوزن</h3>
+    <div class="field-block">
+      <div class="section-label">الوزن</div>
+      <div class="input-row">
+        <input type="number" id="weightInput" placeholder="مثال: 3.5" step="0.1" min="0" max="30">
+        <span class="unit-label">كيلو</span>
+      </div>
+    </div>
+    <div class="field-block">
+      <div class="section-label">التاريخ (اتركيه لو النهارده)</div>
+      <input type="date" id="weightDateInput">
+    </div>
+    <div class="field-block">
+      <div class="section-label">ملاحظات (اختياري)</div>
+      <textarea id="weightNote" rows="2" placeholder="أي ملاحظة..."></textarea>
+    </div>
+    <button class="btn" onclick="saveWeight()">💾 سجّل الوزن</button>
+    <div class="sync-indicator" id="weightSyncStatus"></div>
+  </div>
+
+  <!-- CHART -->
+  <div class="card">
+    <h3>📈 منحنى الوزن</h3>
+    <div class="chart-wrap" id="weightChartWrap"></div>
+  </div>
+
+  <div class="card">
+    <h3>📋 سجل الوزن</h3>
+    <div class="sync-indicator syncing" id="weightLoadStatus">جاري التحميل...</div>
+    <div class="log-list" id="weightLog"></div>
+  </div>
+</div>
+
+<script>
+  const SUPABASE_URL = 'https://usandflhyhrsgrcicahv.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVzYW5kZmxoeWhyc2dyY2ljYWh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4OTkxNjEsImV4cCI6MjA5NzQ3NTE2MX0.NXkL_RlyG5lk_GMAcI7T6ufEAptYEv9ABGsmXIINR2Q';
+
+  async function sbFetch(path, options = {}) {
+    const res = await fetch(SUPABASE_URL + path, {
+      ...options,
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_KEY,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=representation',
+        ...(options.headers || {})
+      }
+    });
+    if (!res.ok) { const err = await res.text(); throw new Error(err); }
+    const text = await res.text();
+    return text ? JSON.parse(text) : [];
+  }
+
+  // ── Age ──
+  const BIRTH = new Date(2026, 5, 11);
+  function calcAge() {
+    const now = new Date();
+    let years = 0, months = 0, weeks = 0, days = 0, tmp = new Date(BIRTH);
+    while (true) { let n = new Date(tmp); n.setFullYear(n.getFullYear()+1); if (n <= now) { years++; tmp = n; } else break; }
+    while (true) { let n = new Date(tmp); n.setMonth(n.getMonth()+1); if (n <= now) { months++; tmp = n; } else break; }
+    while (true) { let n = new Date(tmp); n.setDate(n.getDate()+7); if (n <= now) { weeks++; tmp = n; } else break; }
+    days = Math.floor((now - tmp) / 864e5) + 1;
+    let parts = [];
+    if (years)  parts.push(years  + ' سنة');
+    if (months) parts.push(months + ' شهر');
+    if (weeks)  parts.push(weeks  + ' أسبوع');
+    if (days)   parts.push(days   + ' يوم');
+    return parts.length ? parts.join(' و ') : 'يوم واحد';
+  }
+  function updateAge() { document.getElementById('ageBadge').textContent = '🎂 عمرها: ' + calcAge(); }
+  updateAge();
+  setInterval(updateAge, 60000);
+
+  // ── Tabs ──
+  function switchTab(name, btn) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(name).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // ── Nursing type / side ──
+  let nursingType = 'natural', selectedSide = 'right', diaperType = 'pi';
+  function selectType(type) {
+    nursingType = type;
+    document.getElementById('typeNatural').classList.toggle('selected', type === 'natural');
+    document.getElementById('typeFormula').classList.toggle('selected', type === 'formula');
+    document.getElementById('naturalControls').style.display = type === 'natural' ? 'block' : 'none';
+    document.getElementById('formulaControls').style.display = type === 'formula' ? 'block' : 'none';
+  }
+  function selectSide(side) {
+    selectedSide = side;
+    document.getElementById('sideR').classList.toggle('selected', side === 'right');
+    document.getElementById('sideL').classList.toggle('selected', side === 'left');
+  }
+  function selectDiaper(type) {
+    diaperType = type;
+    ['pi','ki','both'].forEach(t => document.getElementById('diaper'+t.charAt(0).toUpperCase()+t.slice(1)).classList.toggle('selected', t === type));
+  }
+
+  // ── Nursing ──
+  async function saveNursing() {
+    const dateVal = document.getElementById('nursingDateInput').value;
+    const timestamp = dateVal ? new Date(dateVal).toISOString() : new Date().toISOString();
+    let entry = { type: nursingType, timestamp };
+    if (nursingType === 'natural') {
+      const mins = parseFloat(document.getElementById('durationInput').value);
+      if (!mins || mins <= 0) { alert('اكتبي المدة بالدقيقة!'); return; }
+      entry.duration = mins;
+      entry.side = selectedSide === 'right' ? 'يمين' : 'شمال';
+      document.getElementById('durationInput').value = '';
+    } else {
+      const ml = parseFloat(document.getElementById('mlInput').value);
+      if (!ml || ml <= 0) { alert('اكتبي الكمية!'); return; }
+      entry.ml = ml;
+      document.getElementById('mlInput').value = '';
+    }
+    const note = document.getElementById('nursingNote').value.trim();
+    if (note) entry.note = note;
+    document.getElementById('nursingNote').value = '';
+    document.getElementById('nursingDateInput').value = '';
+    const status = document.getElementById('nursingSyncStatus');
+    status.className = 'sync-indicator syncing'; status.textContent = '⏳ جاري الحفظ...';
+    try {
+      await sbFetch('/rest/v1/nursing_logs', { method: 'POST', body: JSON.stringify(entry) });
+      status.className = 'sync-indicator synced'; status.textContent = '✅ اتحفظ!';
+      setTimeout(() => status.textContent = '', 2000);
+      loadNursingLogs();
+    } catch(e) { status.className = 'sync-indicator error'; status.textContent = '❌ مش اتحفظ، جرب تاني'; }
+  }
+
+  async function loadNursingLogs() {
+    const loadStatus = document.getElementById('nursingLoadStatus');
+    try {
+      const data = await sbFetch('/rest/v1/nursing_logs?order=timestamp.desc&limit=500');
+      loadStatus.textContent = '';
+      renderNursingLog(data);
+    } catch(e) { loadStatus.className = 'sync-indicator error'; loadStatus.textContent = '❌ مش قادر يحمل البيانات'; }
+  }
+
+  function getDayWindow(dateStr) {
+    let start, end;
+    if (dateStr) {
+      // dateStr = "2026-06-20" → 6am local that day
+      const [y, m, d] = dateStr.split('-').map(Number);
+      start = new Date(y, m - 1, d, 6, 0, 0, 0);
+    } else {
+      const now = new Date();
+      start = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 6, 0, 0, 0);
+      if (now.getHours() < 6) start.setDate(start.getDate() - 1);
+    }
+    end = new Date(start);
+    end.setDate(end.getDate() + 1);
+    return { start, end };
+  }
+
+  function formatDayLabel(dateStr) {
+    if (!dateStr) return 'من ٦ص النهارده لـ ٦ص بكره';
+    const d = new Date(dateStr + 'T06:00:00');
+    return `${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()} — ٦ص لـ ٦ص`;
+  }
+
+  // cached logs for summary updates
+  let _nursingLogs = [], _diaperLogs = [];
+
+  function calcNursingSummary(logs, dateStr) {
+    const { start, end } = getDayWindow(dateStr);
+    const today = logs.filter(l => { const t = new Date(l.timestamp); return t >= start && t < end; });
+    let naturalCount = 0, formulaMl = 0;
+    today.forEach(l => {
+      if (l.type === 'natural' || !l.type) naturalCount++;
+      else formulaMl += parseFloat(l.ml || 0);
+    });
+    document.getElementById('sumNatural').textContent = naturalCount + ' مرة';
+    document.getElementById('sumFormula').textContent = formulaMl > 0 ? formulaMl : '-';
+    document.getElementById('nursingSummaryLabel').textContent = formatDayLabel(dateStr);
+  }
+
+  function calcDiaperSummary(logs, dateStr) {
+    const { start, end } = getDayWindow(dateStr);
+    const today = logs.filter(l => { const t = new Date(l.timestamp); return t >= start && t < end; });
+    let pi = 0, ki = 0;
+    today.forEach(l => {
+      if (l.diaper_type === 'pi') pi++;
+      else if (l.diaper_type === 'ki') ki++;
+      else if (l.diaper_type === 'both') { pi++; ki++; }
+    });
+    document.getElementById('sumPi').textContent = pi;
+    document.getElementById('sumKi').textContent = ki;
+    document.getElementById('diaperSummaryLabel').textContent = formatDayLabel(dateStr);
+  }
+
+  function updateNursingSummary() {
+    const dateStr = document.getElementById('nursingSummaryDate').value;
+    calcNursingSummary(_nursingLogs, dateStr || null);
+  }
+
+  function updateDiaperSummary() {
+    const dateStr = document.getElementById('diaperSummaryDate').value;
+    calcDiaperSummary(_diaperLogs, dateStr || null);
+  }
+
+  function renderNursingLog(logs) {
+    const container = document.getElementById('nursingLog');
+    if (!logs || !logs.length) { container.innerHTML = '<div class="empty-state">لسه مفيش تسجيلات 🍼</div>'; }
+    else {
+      container.innerHTML = logs.map(l => {
+        const isNatural = l.type === 'natural' || !l.type;
+        const badge = isNatural ? `<span class="log-badge badge-natural">طبيعي</span>` : `<span class="log-badge badge-formula">صناعي</span>`;
+        const detail = isNatural ? `${l.duration} دقيقة — ${l.side}` : `${l.ml} ml`;
+        const note = l.note ? `<div class="log-note">📝 ${l.note}</div>` : '';
+        return `<div class="log-item"><div><div class="log-value">${detail}${badge}</div>${note}<div class="log-date">${formatDate(l.timestamp)}</div></div><button class="delete-btn" onclick="deleteNursing('${l.id}')">🗑</button></div>`;
+      }).join('');
+    }
+    // cache and summarize
+    _nursingLogs = logs || [];
+    const dateStr = document.getElementById('nursingSummaryDate').value;
+    calcNursingSummary(_nursingLogs, dateStr || null);
+  }
+
+  async function deleteNursing(id) {
+    try { await sbFetch(`/rest/v1/nursing_logs?id=eq.${id}`, { method: 'DELETE' }); loadNursingLogs(); }
+    catch(e) { alert('مش قادر يمسح، جرب تاني'); }
+  }
+
+  // ── Weight ──
+  async function saveWeight() {
+    const val = parseFloat(document.getElementById('weightInput').value);
+    if (!val || val <= 0) { alert('اكتبي وزن صح!'); return; }
+    const dateVal = document.getElementById('weightDateInput').value;
+    const timestamp = dateVal ? new Date(dateVal).toISOString() : new Date().toISOString();
+    const note = document.getElementById('weightNote').value.trim();
+    const status = document.getElementById('weightSyncStatus');
+    status.className = 'sync-indicator syncing'; status.textContent = '⏳ جاري الحفظ...';
+    try {
+      const entry = { weight: val, timestamp };
+      if (note) entry.note = note;
+      await sbFetch('/rest/v1/weight_logs', { method: 'POST', body: JSON.stringify(entry) });
+      status.className = 'sync-indicator synced'; status.textContent = '✅ اتحفظ!';
+      setTimeout(() => status.textContent = '', 2000);
+      document.getElementById('weightInput').value = '';
+      document.getElementById('weightDateInput').value = '';
+      document.getElementById('weightNote').value = '';
+      loadWeightLogs();
+    } catch(e) { status.className = 'sync-indicator error'; status.textContent = '❌ مش اتحفظ، جرب تاني'; }
+  }
+
+  async function loadWeightLogs() {
+    const loadStatus = document.getElementById('weightLoadStatus');
+    try {
+      const data = await sbFetch('/rest/v1/weight_logs?order=timestamp.asc&limit=100');
+      loadStatus.textContent = '';
+      renderWeightLog([...data].reverse());
+      renderWeightChart(data);
+    } catch(e) { loadStatus.className = 'sync-indicator error'; loadStatus.textContent = '❌ مش قادر يحمل البيانات'; }
+  }
+
+  function renderWeightChart(logs) {
+    const wrap = document.getElementById('weightChartWrap');
+    if (!logs || logs.length < 1) {
+      wrap.innerHTML = '<div class="chart-empty">مفيش بيانات كفاية للرسم 📊</div>';
+      return;
+    }
+
+    const BIRTH = new Date(2026, 5, 11);
+    const W = 320, H = 220;
+    const PL = 44, PR = 16, PT = 24, PB = 52;
+    const cW = W - PL - PR, cH = H - PT - PB;
+    const bottom = PT + cH;
+
+    // ── CHART 1: weight over time ──
+    if (logs.length >= 2) {
+      const values = logs.map(l => parseFloat(l.weight));
+      const minV = 2, maxV = Math.max(...values, 6), range = maxV - minV;
+      function toX1(i) { return PL + (i / (logs.length - 1)) * cW; }
+      function toY1(v) { return PT + (1 - (v - minV) / range) * cH; }
+
+      const points = logs.map((l, i) => ({ x: toX1(i), y: toY1(parseFloat(l.weight)), w: l.weight, d: new Date(l.timestamp) }));
+      const pathD = points.map((p, i) => {
+        if (i === 0) return `M${p.x.toFixed(1)},${p.y.toFixed(1)}`;
+        const prev = points[i-1];
+        const cx = ((prev.x + p.x) / 2).toFixed(1);
+        return `C${cx},${prev.y.toFixed(1)} ${cx},${p.y.toFixed(1)} ${p.x.toFixed(1)},${p.y.toFixed(1)}`;
+      }).join(' ');
+      const areaD = pathD + ` L${points[points.length-1].x},${bottom} L${points[0].x},${bottom} Z`;
+
+      const yVals = [minV, parseFloat(((minV+maxV)/2).toFixed(1)), maxV];
+      const yLabels1 = yVals.map(v => `<text x="${PL-5}" y="${toY1(v)+4}" text-anchor="end" font-size="9" fill="#444">${v.toFixed(1)}</text>`).join('');
+      const yGrid1 = yVals.map(v => `<line x1="${PL}" y1="${toY1(v)}" x2="${W-PR}" y2="${toY1(v)}" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="3,3"/>`).join('');
+
+      const xIdxs = logs.length <= 3 ? logs.map((_,i)=>i) : [0, Math.floor((logs.length-1)/2), logs.length-1];
+      const xLabels1 = xIdxs.map(i => {
+        const p = points[i];
+        return `<text x="${p.x.toFixed(1)}" y="${bottom+14}" text-anchor="middle" font-size="9" fill="#444">${p.d.getDate()}/${p.d.getMonth()+1}</text>`;
+      }).join('');
+
+      const dots1 = points.map(p => `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="4" fill="#C9748A" stroke="white" stroke-width="1.5"><title>${p.w} كيلو</title></circle>`).join('');
+      const last = points[points.length-1];
+      const lastWLabel = `${parseFloat(last.w).toFixed(2)}ك`;
+      const lastDLabel = `${last.d.getDate()}/${last.d.getMonth()+1}`;
+
+      const svg1 = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="overflow:visible;width:100%;display:block;margin-bottom:20px">
+        <defs><linearGradient id="wGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#C9748A" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#C9748A" stop-opacity="0"/>
+        </linearGradient></defs>
+        ${yGrid1}
+        <line x1="${PL}" y1="${PT}" x2="${PL}" y2="${bottom}" stroke="#222" stroke-width="1.8"/>
+        <line x1="${PL}" y1="${bottom}" x2="${W-PR}" y2="${bottom}" stroke="#222" stroke-width="1.8"/>
+        <path d="${areaD}" fill="url(#wGrad)"/>
+        <path d="${pathD}" fill="none" stroke="#C9748A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        ${yLabels1}${xLabels1}${dots1}
+        <line x1="${last.x}" y1="${last.y}" x2="${PL}" y2="${last.y}" stroke="#C9748A" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="${last.x}" y1="${last.y}" x2="${last.x}" y2="${bottom}" stroke="#C9748A" stroke-width="1" stroke-dasharray="3,3"/>
+        <rect x="${PL-36}" y="${last.y-9}" width="32" height="14" rx="4" fill="#C9748A"/>
+        <text x="${PL-20}" y="${last.y+1}" text-anchor="middle" font-size="9" fill="white" font-weight="bold">${lastWLabel}</text>
+        <rect x="${last.x-16}" y="${bottom+3}" width="32" height="14" rx="4" fill="#C9748A"/>
+        <text x="${last.x}" y="${bottom+13}" text-anchor="middle" font-size="9" fill="white" font-weight="bold">${lastDLabel}</text>
+        <text x="${PL-5}" y="${PT-8}" text-anchor="middle" font-size="9" fill="#222" font-weight="bold">كيلو</text>
+        <text x="${PL+cW/2}" y="${H-2}" text-anchor="middle" font-size="9" fill="#222" font-weight="bold">التاريخ</text>
+      </svg>`;
+
+      // ── CHART 2: WHO curves + last petra point ──
+      const WHO = [
+        [2.4,2.8,3.2,3.7,4.2],[2.9,3.4,3.9,4.5,5.1],[3.4,3.9,4.5,5.1,5.8],
+        [3.9,4.5,5.1,5.8,6.5],[4.3,4.9,5.6,6.3,7.0],[4.7,5.3,6.0,6.8,7.5],
+        [5.0,5.7,6.4,7.2,8.0],[5.3,6.0,6.8,7.6,8.4],[5.6,6.3,7.0,7.9,8.7],
+        [5.8,6.5,7.3,8.2,9.0],[6.0,6.7,7.5,8.4,9.3],[6.1,6.9,7.7,8.6,9.5],
+        [6.3,7.0,7.9,8.8,9.7],[6.4,7.2,8.0,9.0,9.9],[6.6,7.4,8.2,9.2,10.1],
+        [6.7,7.5,8.4,9.4,10.4],[6.9,7.7,8.6,9.6,10.6],[7.0,7.8,8.7,9.8,10.8],
+        [7.1,8.0,8.9,10.0,11.0],[7.3,8.1,9.1,10.1,11.2],[7.4,8.3,9.2,10.3,11.4],
+        [7.5,8.4,9.4,10.5,11.6],[7.7,8.6,9.5,10.7,11.8],[7.8,8.7,9.7,10.9,12.0],
+        [7.9,8.9,9.9,11.0,12.2]
+      ];
+
+      const W2 = 320, H2 = 240, PL2 = 44, PR2 = 36, PT2 = 24, PB2 = 52;
+      const cW2 = W2-PL2-PR2, cH2 = H2-PT2-PB2, bottom2 = PT2+cH2;
+      const minV2 = 2, maxV2 = 13, range2 = maxV2-minV2;
+
+      function toX2(mo) { return PL2 + (mo/24)*cW2; }
+      function toY2(v)  { return PT2 + (1-(v-minV2)/range2)*cH2; }
+
+      const whoColors = ['#ffaaaa','#ff8888','#cc44cc','#ff8888','#ffaaaa'];
+      const whoLabels = ['P3','P15','Mean','P85','P97'];
+      const whoPaths = [0,1,2,3,4].map(ci => {
+        const d = WHO.map((row,mo) => `${mo===0?'M':'L'}${toX2(mo).toFixed(1)},${toY2(row[ci]).toFixed(1)}`).join(' ');
+        return `<path d="${d}" fill="none" stroke="${whoColors[ci]}" stroke-width="${ci===2?2:1.2}" stroke-dasharray="${ci===2?'':'4,3'}" opacity="0.8"/>
+                <text x="${toX2(24)+3}" y="${toY2(WHO[24][ci])+4}" font-size="8" fill="${whoColors[ci]}">${whoLabels[ci]}</text>`;
+      }).join('');
+
+      const yVals2 = [2,4,6,8,10,12];
+      const yLabels2 = yVals2.map(v =>
+        `<text x="${PL2-5}" y="${toY2(v)+4}" text-anchor="end" font-size="8" fill="#555">${v}</text>
+         <line x1="${PL2}" y1="${toY2(v)}" x2="${W2-PR2}" y2="${toY2(v)}" stroke="#eee" stroke-width="1"/>`
+      ).join('');
+      const xLabels2 = [0,6,12,18,24].map(mo =>
+        `<text x="${toX2(mo)}" y="${bottom2+13}" text-anchor="middle" font-size="8" fill="#555">${mo}ش</text>`
+      ).join('');
+
+      // last petra point on WHO chart
+      const lastLog = logs[logs.length-1];
+      const lastAgeMo = (new Date(lastLog.timestamp) - BIRTH) / (1000*60*60*24*30.44);
+      const lastW = parseFloat(lastLog.weight);
+      const px = toX2(Math.max(0, Math.min(24, lastAgeMo)));
+      const py = toY2(lastW);
+
+      const svg2 = `<svg viewBox="0 0 ${W2} ${H2}" xmlns="http://www.w3.org/2000/svg" style="overflow:visible;width:100%;display:block">
+        ${yLabels2}
+        <line x1="${PL2}" y1="${PT2}" x2="${PL2}" y2="${bottom2}" stroke="#222" stroke-width="1.8"/>
+        <line x1="${PL2}" y1="${bottom2}" x2="${W2-PR2}" y2="${bottom2}" stroke="#222" stroke-width="1.8"/>
+        ${whoPaths}
+        <line x1="${px}" y1="${py}" x2="${PL2}" y2="${py}" stroke="#C9748A" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="${px}" y1="${py}" x2="${px}" y2="${bottom2}" stroke="#C9748A" stroke-width="1" stroke-dasharray="3,3"/>
+        <circle cx="${px}" cy="${py}" r="6" fill="#C9748A" stroke="white" stroke-width="2"/>
+        <rect x="${PL2-37}" y="${py-9}" width="33" height="14" rx="4" fill="#C9748A"/>
+        <text x="${PL2-20}" y="${py+1}" text-anchor="middle" font-size="9" fill="white" font-weight="bold">${lastW.toFixed(2)}ك</text>
+        <rect x="${px-18}" y="${bottom2+3}" width="36" height="14" rx="4" fill="#C9748A"/>
+        <text x="${px}" y="${bottom2+13}" text-anchor="middle" font-size="9" fill="white" font-weight="bold">${lastAgeMo.toFixed(1)}ش</text>
+        ${xLabels2}
+        <text x="${PL2-5}" y="${PT2-8}" text-anchor="middle" font-size="9" fill="#222" font-weight="bold">كيلو</text>
+        <text x="${PL2+cW2/2}" y="${H2-2}" text-anchor="middle" font-size="9" fill="#222" font-weight="bold">العمر بالشهر</text>
+      </svg>`;
+
+      wrap.innerHTML = svg1 + `<div style="font-size:0.8rem;font-weight:600;color:var(--accent);margin-bottom:8px;text-align:center">📊 منحنيات WHO — بنات 0-24 شهر</div>` + svg2;
+    } else {
+      // only 1 point — show WHO only
+      wrap.innerHTML = '<div class="chart-empty">محتاج أكتر من قراءة عشان يرسم المنحنى الأول 📊</div>';
+    }
+  }
+
+  function renderWeightLog(logs) {
+    const container = document.getElementById('weightLog');
+    if (!logs || !logs.length) { container.innerHTML = '<div class="empty-state">لسه مفيش تسجيلات ⚖️</div>'; return; }
+    container.innerHTML = logs.map(l => {
+      const note = l.note ? `<div class="log-note">📝 ${l.note}</div>` : '';
+      return `<div class="log-item"><div><div class="log-value">${l.weight} كيلو</div>${note}<div class="log-date">${formatDate(l.timestamp)}</div></div><button class="delete-btn" onclick="deleteWeight('${l.id}')">🗑</button></div>`;
+    }).join('');
+  }
+
+  async function deleteWeight(id) {
+    try { await sbFetch(`/rest/v1/weight_logs?id=eq.${id}`, { method: 'DELETE' }); loadWeightLogs(); }
+    catch(e) { alert('مش قادر يمسح، جرب تاني'); }
+  }
+
+  // ── Diaper ──
+  async function saveDiaper() {
+    const dateVal = document.getElementById('diaperDateInput').value;
+    const timestamp = dateVal ? new Date(dateVal).toISOString() : new Date().toISOString();
+    const note = document.getElementById('diaperNote').value.trim();
+    const entry = { diaper_type: diaperType, timestamp };
+    if (note) entry.note = note;
+    const status = document.getElementById('diaperSyncStatus');
+    status.className = 'sync-indicator syncing'; status.textContent = '⏳ جاري الحفظ...';
+    try {
+      await sbFetch('/rest/v1/diaper_logs', { method: 'POST', body: JSON.stringify(entry) });
+      status.className = 'sync-indicator synced'; status.textContent = '✅ اتحفظ!';
+      setTimeout(() => status.textContent = '', 2000);
+      document.getElementById('diaperDateInput').value = '';
+      document.getElementById('diaperNote').value = '';
+      loadDiaperLogs();
+    } catch(e) { status.className = 'sync-indicator error'; status.textContent = '❌ مش اتحفظ، جرب تاني'; }
+  }
+
+  async function loadDiaperLogs() {
+    const loadStatus = document.getElementById('diaperLoadStatus');
+    try {
+      const data = await sbFetch('/rest/v1/diaper_logs?order=timestamp.desc&limit=500');
+      loadStatus.textContent = '';
+      renderDiaperLog(data);
+    } catch(e) { loadStatus.className = 'sync-indicator error'; loadStatus.textContent = '❌ مش قادر يحمل البيانات'; }
+  }
+
+  function renderDiaperLog(logs) {
+    const container = document.getElementById('diaperLog');
+    if (!logs || !logs.length) { container.innerHTML = '<div class="empty-state">لسه مفيش تسجيلات 🚼</div>'; }
+    else {
+      const icons = { pi: '💧 بي', ki: '💩 كي', both: '💧💩 الاتنين' };
+      container.innerHTML = logs.map(l => {
+        const note = l.note ? `<div class="log-note">📝 ${l.note}</div>` : '';
+        return `<div class="log-item"><div><div class="log-value">${icons[l.diaper_type] || l.diaper_type}</div>${note}<div class="log-date">${formatDate(l.timestamp)}</div></div><button class="delete-btn" onclick="deleteDiaper('${l.id}')">🗑</button></div>`;
+      }).join('');
+    }
+    // cache and summarize
+    _diaperLogs = logs || [];
+    const dateStr = document.getElementById('diaperSummaryDate').value;
+    calcDiaperSummary(_diaperLogs, dateStr || null);
+  }
+
+  async function deleteDiaper(id) {
+    try { await sbFetch(`/rest/v1/diaper_logs?id=eq.${id}`, { method: 'DELETE' }); loadDiaperLogs(); }
+    catch(e) { alert('مش قادر يمسح، جرب تاني'); }
+  }
+
+  function formatDate(iso) {
+    return new Date(iso).toLocaleDateString('ar-EG', {
+      year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+    });
+  }
+
+  loadNursingLogs();
+  loadWeightLogs();
+  loadDiaperLogs();
+  setInterval(loadNursingLogs, 60000);
+  setInterval(loadWeightLogs, 60000);
+  setInterval(loadDiaperLogs, 60000);
+</script>
+</body>
+</html>
